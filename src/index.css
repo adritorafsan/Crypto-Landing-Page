@@ -1,2 +1,36 @@
 
 @import "tailwindcss";
+
+@theme {
+  --font-primary: 'Inter', sans-serif;
+
+  --color-primary: #f5f5f5;
+  --color-secondary: #b0b0b0;
+  --color-bg: #00FFB2;
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 20px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #22c55e,
+    #4ade80,
+    #22c55e,
+    transparent
+  );
+
+  filter: blur(6px);
+  opacity: 0.8;
+}
