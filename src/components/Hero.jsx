@@ -24,14 +24,16 @@ const Hero = () => {
                 </div>
             </div>
             <div className='mt-8 relative p-[1px] rounded-2xl overflow-hidden bg-zinc-900 border border-white/10'>
-               <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-emerald-400/80 to-transparent blur-[4px]" 
-        aria-hidden="true"
-      />
-               
-
+                <div
+                    className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-emerald-400/80 to-transparent blur-[4px]"
+                    aria-hidden="true"
+                />
                 <img className='  rounded-xl' src={Heroimg} alt="Hero Image" />
             </div>
+            
+
+            <p className='  text-primary text-3xl mt-13 leading-11  max-w-[44%] text-center'>Simplicity,performance,and security,empowering you to navigate the digital world with confidence and agility.</p>
+            
         </div>
     )
 }
