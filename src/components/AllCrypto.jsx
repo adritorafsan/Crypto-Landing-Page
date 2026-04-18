@@ -13,7 +13,7 @@ const AllCrypto = () => {
             <h1 className="text-5xl font-bold text-primary ">All Cryptos, One Platform</h1>
             <p className="text-secondary font-medium text-lg max-w-[75%] ">Buy, sell, and convert all major cryptocurrencies on a single platform. A seamless experience with no compromises.</p>
           </div>
-         <Button2 />
+         <Button2 text={"Buy All Crypto"} />
         </div>
 
         <div className=" flex flex-col justify-center items-center gap-y-4 border-l border-secondary/20 ">
