@@ -5,6 +5,7 @@ import Benefits from './components/Benefits'
 import AllCrypto from './components/AllCrypto'
 import HowWorks from './components/HowWorks'
 import Testimonial from './components/Testimonial'
+import Pricing from './components/Pricing'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
    <AllCrypto />
    <HowWorks />
    <Testimonial />
+   <Pricing />
     </>
   )
 }
