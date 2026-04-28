@@ -5,10 +5,7 @@ import { RiXrpFill } from "react-icons/ri";
 import { FaEthereum } from "react-icons/fa";
 import CryptoLineCard from "./CryptoLineCard";
 
-
-
-
-const CryptoLine = ({cstmdirection}) => {
+const CryptoLine = ({ cstmdirection }) => {
 
   const CryptoData = [
     {
@@ -46,21 +43,38 @@ const CryptoLine = ({cstmdirection}) => {
       change: '-4.0%',
       cstmBg: 'bg-white'
     }
-
   ]
 
   return (
-    <marquee className="py-2 flex" direction={cstmdirection}   behavior="scroll" loop="infinite">
-      <div className="flex gap-x-3">
-        {CryptoData.map((crypto, index) => {
-
-          return <div className="flex justify-center items-center" key={index}>
-            <CryptoLineCard icon={crypto.icon} name={crypto.name} price={crypto.price} change={crypto.change} cstmBg={crypto.cstmBg} />
-          </div>
-        })}
-      </div>
-
-    </marquee>
+    /* 1. w-screen md:w-full ensures it doesn't break parent constraints on desktop 
+       2. overflow-hidden is a safety net for mobile layout shifts
+    */
+    <div className="w-full overflow-hidden">
+      <marquee 
+        className="py-1 md:py-2 flex items-center" 
+        direction={cstmdirection} 
+        behavior="scroll" 
+        scrollamount={window.innerWidth < 768 ? "5" : "8"} // Slower on mobile for readability
+        loop="infinite"
+      >
+        {/* gap-x-3 for mobile, gap-x-6 for desktop to give more space */}
+        <div className="flex gap-x-3 md:gap-x-6 px-2">
+          {CryptoData.map((crypto, index) => {
+            return (
+              <div className="flex justify-center items-center shrink-0" key={index}>
+                <CryptoLineCard 
+                  icon={crypto.icon} 
+                  name={crypto.name} 
+                  price={crypto.price} 
+                  change={crypto.change} 
+                  cstmBg={crypto.cstmBg} 
+                />
+              </div>
+            )
+          })}
+        </div>
+      </marquee>
+    </div>
   )
 }
 
